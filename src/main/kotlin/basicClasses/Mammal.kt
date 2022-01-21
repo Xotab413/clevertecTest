@@ -1,10 +1,7 @@
 package cleverTechTest.basicClasses
 
 import cleverTechTest.AnimalState
-import cleverTechTest.interfaces.Eatable
-import cleverTechTest.interfaces.Feedable
-import cleverTechTest.interfaces.Moveable
-import cleverTechTest.interfaces.Sleepable
+import cleverTechTest.interfaces.*
 
 abstract class Mammal(
     initState: AnimalState? = null
