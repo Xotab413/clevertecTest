@@ -1,11 +1,10 @@
 package cleverTechTest.basicClasses
 
 import cleverTechTest.AnimalState
-import cleverTechTest.interfaces.*
 
 abstract class Mammal(
     initState: AnimalState? = null
-) : Animal(initState), Feedable, Moveable, Sleepable, Eatable {
+) : Animal(initState) {
 
     override fun randomAction() {
         when ((1..4).random()) {
@@ -13,26 +12,32 @@ abstract class Mammal(
             2 -> eat()
             3 -> sleep()
             4 -> move()
+            5 -> swim()
         }
     }
 
-    override fun feed() {
+    fun feed() {
         state = AnimalState.FEEDING
         printState()
     }
 
-    override fun eat() {
+    fun eat() {
         state = AnimalState.EATING
         printState()
     }
 
-    override fun move() {
+    fun move() {
         state = AnimalState.MOVING
         printState()
     }
 
-    override fun sleep() {
+    fun sleep() {
         state = AnimalState.SLEEPING
+        printState()
+    }
+
+    fun swim() {
+        state = AnimalState.SWIMMING
         printState()
     }
 }

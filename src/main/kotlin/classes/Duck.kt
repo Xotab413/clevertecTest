@@ -3,9 +3,8 @@ package cleverTechTest.classes
 import cleverTechTest.AnimalState
 import cleverTechTest.basicClasses.Animal
 import cleverTechTest.basicClasses.Bird
-import cleverTechTest.interfaces.Swimmable
 
-class Duck(initState: AnimalState? = null) : Bird(initState), Swimmable {
+class Duck(initState: AnimalState? = null) : Bird(initState){
 
     override fun makeAnimal(initState: AnimalState?): Animal = Duck(initState)
 
@@ -19,7 +18,7 @@ class Duck(initState: AnimalState? = null) : Bird(initState), Swimmable {
         }
     }
 
-    override fun swim() {
+    fun swim() {
         state = AnimalState.SWIMMING
         printState()
     }

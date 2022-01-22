@@ -14,8 +14,11 @@ class Zoo {
     fun open() {
         currentJob = scope.launch {
             while (true) {
-                animals[animals.indices.random()].randomAction()
-                delay(1000)
+                for (animal in animals) {
+                    animal.randomAction()
+                    delay(1000)
+                }
+                println("-")
             }
         }
     }
@@ -34,16 +37,10 @@ class Zoo {
 
     fun printAnimalsList() {
         println("Zoo:")
-        repeat(50) {
-            print("-")
-        }
-        println()
+        println("-")
         for (animal in animals) {
             animal.printState()
         }
-        repeat(50) {
-            print("-")
-        }
-        println()
+        println("-")
     }
 }
